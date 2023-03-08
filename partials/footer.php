@@ -9,10 +9,6 @@
     </div>
 
 </section>
-
-
-
-
 <!-- Menu HAMBERGER -->
 <script src="javaScript/menuHamburger.js"></script>
 <!-- BOOSTRAP -->

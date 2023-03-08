@@ -1,3 +1,9 @@
+<?php
+
+include 'process/dataBase.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
