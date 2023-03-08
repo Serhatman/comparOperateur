@@ -1,3 +1,18 @@
+<section class="footer">
+    <div class="container">
+        <div class="col-6">
+
+        </div>
+        <div class="col-6">
+            
+        </div>
+    </div>
+
+</section>
+
+
+
+
 <!-- Menu HAMBERGER -->
 <script src="javaScript/menuHamburger.js"></script>
 <!-- BOOSTRAP -->
