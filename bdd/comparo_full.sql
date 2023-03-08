@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.2
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 22 mars 2022 à 13:58
--- Version du serveur : 5.7.33
--- Version de PHP : 7.4.27
+-- Généré le : mar. 07 mars 2023 à 13:25
+-- Version du serveur :  5.7.24
+-- Version de PHP : 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -44,26 +45,6 @@ INSERT INTO `author` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `certificate`
---
-
-CREATE TABLE `certificate` (
-  `tour_operator_id` int(11) NOT NULL,
-  `expires_at` datetime NOT NULL,
-  `signatory` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `certificate`
---
-
-INSERT INTO `certificate` (`tour_operator_id`, `expires_at`, `signatory`) VALUES
-(1, '2022-02-09 14:50:07', 'Jean Bertrand'),
-(2, '2023-01-02 14:50:07', 'Bernard Michel');
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `destination`
 --
 
@@ -72,17 +53,27 @@ CREATE TABLE `destination` (
   `location` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
   `tour_operator_id` int(11) NOT NULL
+  `image1` varchar(255) NOT NULL
+  `image2` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `destination`
 --
 
-INSERT INTO `destination` (`id`, `location`, `price`, `tour_operator_id`) VALUES
-(1, 'Rome', 1650, 2),
-(2, 'Londres', 1100, 2),
-(3, 'Monaco', 1390, 1),
-(4, 'Tunis', 2390, 3);
+INSERT INTO `destination` (`id`, `location`, `price`, `tour_operator_id`, `image1`,`image2`) VALUES
+(1, 'Rome', 1650, 2, 'assets/images/rome-1.jpg', 'assets/images/rome-2.jpg'),
+(2, 'London', 1100, 2, 'assets/images/london-1.jpg', 'assets/images/london-2.jpg'),
+(3, 'Monaco', 1390, 1, 'assets/images/monaco_1.jpg', 'assets/images/monaco-2.jpg'),
+(4, 'Paris', 1190, 3, 'assets/images/paris-1.jpg', 'assets/images/paris-2.jpg'),
+(5, 'New York ', 2390, 2, 'assets/images/newYork-1.jpg', 'assets/images/newYork-2.jpg'),
+(6, 'Venise', 1590, 1, 'assets/images/venise-1.jpg', 'assets/images/venise-2.jpg'),
+(7, 'Amsterdam', 2890, 1, 'assets/images/amsterdam-1.jpg', 'assets/images/amsterdam-2.jpg'),
+(8, 'Hong Kong', 2390, 2, 'assets/images/hongKong-1.jpg', 'assets/images/hongKong-2.jpg'),
+(9, 'Japon', 2390, 3, 'assets/images/japon-1.jpg', 'assets/images/japon-2.jpg'),
+(10, 'Mexico', 90, 2, 'assets/images/mexico-1.jpg', 'assets/images/mexico-2.jpg'),
+(11, 'Los Angeles', 2390, 3, 'assets/images/losAngeles-1.jpg', 'assets/images/losAngeles-2.jpg'),
+(12, 'Muraille de Chine', 12390, 3, 'assets/images/murailleChine-1.JPG', 'assets/images/murailleChine-2.JPG');
 
 -- --------------------------------------------------------
 
@@ -102,10 +93,10 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`id`, `message`, `tour_operator_id`, `author_id`) VALUES
-(1, 'Super voyage, prestation au top !!', 2, 1),
-(2, 'Tout est inclus dans le prix, c\'est cool, je recommande', 3, 3),
-(3, 'Un peu cher, mais ça vaut le coup', 2, 3),
-(4, 'arnaque!!!! a fuire!!!', 2, 2);
+(1, "Super voyage, prestation au top !!", 2, 1),
+(2, "Tout est inclus dans le prix, c'est cool, je recommande", 3, 3),
+(3, "Un peu cher, mais ça vaut le coup", 2, 3),
+(4, "arnaque!!!! a fuire!!!", 2, 2);
 
 -- --------------------------------------------------------
 
@@ -159,105 +150,6 @@ INSERT INTO `tour_operator` (`id`, `name`, `link`) VALUES
 --
 ALTER TABLE `author`
   ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `certificate`
---
-ALTER TABLE `certificate`
-  ADD PRIMARY KEY (`tour_operator_id`);
-
---
--- Index pour la table `destination`
---
-ALTER TABLE `destination`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `destination_tour_operator` (`tour_operator_id`);
-
---
--- Index pour la table `review`
---
-ALTER TABLE `review`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `review_tour_operator` (`tour_operator_id`),
-  ADD KEY `review_author` (`author_id`);
-
---
--- Index pour la table `score`
---
-ALTER TABLE `score`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `score_tour_operator` (`tour_operator_id`),
-  ADD KEY `score_author` (`author_id`);
-
---
--- Index pour la table `tour_operator`
---
-ALTER TABLE `tour_operator`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `author`
---
-ALTER TABLE `author`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT pour la table `destination`
---
-ALTER TABLE `destination`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT pour la table `review`
---
-ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT pour la table `score`
---
-ALTER TABLE `score`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT pour la table `tour_operator`
---
-ALTER TABLE `tour_operator`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `certificate`
---
-ALTER TABLE `certificate`
-  ADD CONSTRAINT `certificate_tour_operator` FOREIGN KEY (`tour_operator_id`) REFERENCES `tour_operator` (`id`);
-
---
--- Contraintes pour la table `destination`
---
-ALTER TABLE `destination`
-  ADD CONSTRAINT `destination_tour_operator` FOREIGN KEY (`tour_operator_id`) REFERENCES `tour_operator` (`id`);
-
---
--- Contraintes pour la table `review`
---
-ALTER TABLE `review`
-  ADD CONSTRAINT `review_author` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`),
-  ADD CONSTRAINT `review_tour_operator` FOREIGN KEY (`tour_operator_id`) REFERENCES `tour_operator` (`id`);
-
---
--- Contraintes pour la table `score`
---
-ALTER TABLE `score`
-  ADD CONSTRAINT `score_author` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`),
-  ADD CONSTRAINT `score_tour_operator` FOREIGN KEY (`tour_operator_id`) REFERENCES `tour_operator` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
