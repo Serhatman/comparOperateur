@@ -8,10 +8,10 @@
     </div>
     <nav class="nav" id="nav">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="#ideeVoyage">Idée Voyage</a></li>
+            <li><a href="#comparOperator">Tour Opérateurs</a></li>
+            <li><a href="#destination">Destinations</a></li>
+            <li><a href="#footer">Créateur du site</a></li>
         </ul>
     </nav>
 </div>

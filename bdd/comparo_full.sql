@@ -129,17 +129,18 @@ INSERT INTO `score` (`id`, `value`, `tour_operator_id`, `author_id`) VALUES
 CREATE TABLE `tour_operator` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `link` varchar(255) NOT NULL
+  `link` varchar(255) NOT NULL,
+  `logo` TEXT(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `tour_operator`
 --
 
-INSERT INTO `tour_operator` (`id`, `name`, `link`) VALUES
-(1, 'Salaun Holidays', 'https://www.salaun-holidays.com/'),
-(2, 'Fram', 'https://www.fram.fr/'),
-(3, 'Heliades', 'https://www.heliades.fr/');
+INSERT INTO `tour_operator` (`id`, `name`, `link` , `logo`) VALUES
+(1, 'Salaun Holidays', 'https://www.salaun-holidays.com/', "assets/logo/salaun-holidays.jpg"),
+(2, 'Fram', 'https://www.fram.fr/', "assets/logo/fram.jpg"),
+(3, 'Heliades', 'https://www.heliades.fr/', "assets/logo/heliades.jpg");
 
 --
 -- Index pour les tables déchargées
