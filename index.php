@@ -9,47 +9,6 @@ include "partials/comparOperator.php";
 include "partials/destination.php";
 
 
+/* Section Footer */
+include "partials/footer.php";
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php include "partials/footer.php" ?>

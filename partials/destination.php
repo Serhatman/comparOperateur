@@ -1,188 +1,38 @@
+<?php 
+include 'process/bdd_destination.php';
+?>
+
 <!-- DESTINATION -->
-<section class="destination">
-    <div class="album py-5 bg-light">
+<section id="destination">
+    <div class="album py-5">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="assets/images/bordeaux-to-paris-1800x1000.jpg"
-                            role="img" aria-label="Placeholder: Thumbnail" 
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c"></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">PARIS</text>
-                        </img>
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commentaire</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commenter</button>
+                <?php foreach ($destinations as $destination) { ?>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="<?= $destination["image1"]; ?>"
+                                role="img" aria-label="Placeholder: Thumbnail" 
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <rect width="100%" height="100%" fill="#55595c"></rect>
+                                <text class="text-center p-1" x="50%" y="50%" fill="#eceeef" dy=".3em">
+                                    <?= $destination["location"]; ?>
+                                </text>
+                            </img>
+                            <div class="card-body text-center">
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.<br />
+                                    This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                            <button type="submit" class="btn btn-sm btn-outline-secondary">
+                                                <a href="infoDestination.php">Détail »</a>
+                                            </button>
+                                    </div>
+                                    <small class="text-muted">A partire de <?= $destination["price"]; ?>$</small>
                                 </div>
-                                <small class="text-muted">Note</small>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="assets/images/london-1600x900.jpg"
-                            role="img" aria-label="Placeholder: Thumbnail" 
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c"></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">LONDRES</text>
-                        </img>
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commentaire</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commenter</button>
-                                </div>
-                                <small class="text-muted">Note</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="assets/images/monaco.jpg"
-                            role="img" aria-label="Placeholder: Thumbnail" 
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c"></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">MONACO</text>
-                        </img>                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commentaire</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commenter</button>
-                                </div>
-                                <small class="text-muted">Note</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="assets/images/monaco_monte_carlo_sky_sea_space_landscape_skyline_harbor_nature_1600x900.jpg"
-                            role="img" aria-label="Placeholder: Thumbnail" 
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>MDR</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">ROME</text>
-                        </img>
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commentaire</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commenter</button>
-                                </div>
-                                <small class="text-muted">Note</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
-                            role="img" aria-label="Placeholder: Thumbnail" 
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>MDR</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">PARIS</text>
-                        </img>                            <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commentaire</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commenter</button>
-                                </div>
-                                <small class="text-muted">Note</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
-                            role="img" aria-label="Placeholder: Thumbnail" 
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>MDR</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">PARIS</text>
-                        </img>                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commentaire</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commenter</button>
-                                </div>
-                                <small class="text-muted">Note</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
-                            role="img" aria-label="Placeholder: Thumbnail" 
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>MDR</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">PARIS</text>
-                        </img>                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commentaire</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commenter</button>
-                                </div>
-                                <small class="text-muted">Note</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
-                            role="img" aria-label="Placeholder: Thumbnail" 
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>MDR</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">PARIS</text>
-                        </img>                        <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commentaire</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commenter</button>
-                                </div>
-                                <small class="text-muted">Note</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
-                            role="img" aria-label="Placeholder: Thumbnail" 
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>MDR</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">PARIS</text>
-                        </img>                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commentaire</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Commenter</button>
-                                </div>
-                                <small class="text-muted">Note</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>    
             </div>
         </div>
     </div>

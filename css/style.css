@@ -1,25 +1,28 @@
+/* 
 html,
 body {
-    /* scroll-snap-type: y mandatory; */
-}
+     scroll-snap-type: y mandatory; 
+  }
 
-header,
-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    text-align: center;
-}
+  header,
+  section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      text-align: center;
+  }
 
-body,
-header,
-section,
-footer,
-html {
-    block-size: 100%;
-}
-
+  body,
+  header,
+  section,
+  footer,
+  html {
+      block-size: 100%;
+  }
+*/
 #menu {
     z-index: 2;
+
+    position: fixed;
 }
 
 #menu-bar {
@@ -108,15 +111,7 @@ html {
 }
 
 .change-bg {
-    width: 520px;
-    height: 460px;
+    width: 500px;
+    height: 520px;
     transform: translate(-60%, -30%);
-}
-
-/* $*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$* IDEE VOYAGE *$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$* */
-
-.destination {
-    border: 1px solid red;
-
-    background-color: black;
 }

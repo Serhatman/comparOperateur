@@ -1,5 +1,5 @@
 <!-- IDEE VOYAGE -->
-<section id="ideeVoyage" class="mt-5">
+<section id="ideeVoyage" class="mt-4">
     <div class="container">
         <div class="container-fuild">
             <div id="carouselExampleCaptions" class="carousel slide">
@@ -11,25 +11,25 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="assets/images/london-england-city_1600x900.jpg" class="img-fluid" alt="...">
+                        <img src="assets/images/london-2.jpg" class="img-fluid" alt="...">
                         <div class="carousel-caption">
                             <h5>LONDRES</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/monaco_monte_carlo_sky_sea_space_landscape_skyline_harbor_nature_1600x900.jpg" class="img-fluid" alt="...">
+                        <img src="assets/images/monaco-2.jpg" class="img-fluid" alt="...">
                         <div class="carousel-caption">
                             <h5>MONACO</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/spencer-davis-halyuhp6ole-unsplash-ROME-1600x900.jpg" class="img-fluid" alt="...">
+                        <img src="assets/images/rome-2.jpg" class="img-fluid" alt="...">
                         <div class="carousel-caption">
                             <h5>ROME</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/paris_france_eiffel_tower_1600x900.jpg" class="img-fluid" alt="...">
+                        <img src="assets/images/paris-2.jpg" class="img-fluid" alt="...">
                         <div class="carousel-caption">
                             <h5>PARIS</h5>
                         </div>

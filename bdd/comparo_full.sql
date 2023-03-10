@@ -45,23 +45,23 @@ INSERT INTO `author` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `destination`
+-- Structure de la table `destinations`
 --
 
-CREATE TABLE `destination` (
+CREATE TABLE `destinations` (
   `id` int(11) NOT NULL,
   `location` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
-  `tour_operator_id` int(11) NOT NULL
-  `image1` varchar(255) NOT NULL
-  `image2` varchar(255) NOT NULL
+  `tour_operator_id` int(11) NOT NULL,
+  `image1` TEXT(255) NOT NULL,
+  `image2` TEXT(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `destination`
+-- Déchargement des données de la table `destinations`
 --
 
-INSERT INTO `destination` (`id`, `location`, `price`, `tour_operator_id`, `image1`,`image2`) VALUES
+INSERT INTO `destinations` (`id`, `location`, `price`, `tour_operator_id`, `image1`,`image2`) VALUES
 (1, 'Rome', 1650, 2, 'assets/images/rome-1.jpg', 'assets/images/rome-2.jpg'),
 (2, 'London', 1100, 2, 'assets/images/london-1.jpg', 'assets/images/london-2.jpg'),
 (3, 'Monaco', 1390, 1, 'assets/images/monaco_1.jpg', 'assets/images/monaco-2.jpg'),
@@ -129,17 +129,18 @@ INSERT INTO `score` (`id`, `value`, `tour_operator_id`, `author_id`) VALUES
 CREATE TABLE `tour_operator` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `link` varchar(255) NOT NULL
+  `link` varchar(255) NOT NULL,
+  `logo` TEXT(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `tour_operator`
 --
 
-INSERT INTO `tour_operator` (`id`, `name`, `link`) VALUES
-(1, 'Salaun Holidays', 'https://www.salaun-holidays.com/'),
-(2, 'Fram', 'https://www.fram.fr/'),
-(3, 'Heliades', 'https://www.heliades.fr/');
+INSERT INTO `tour_operator` (`id`, `name`, `link` , `logo`) VALUES
+(1, 'Salaun Holidays', 'https://www.salaun-holidays.com/', "assets/logo/salaun-holidays.jpg"),
+(2, 'Fram', 'https://www.fram.fr/', "assets/logo/fram.jpg"),
+(3, 'Heliades', 'https://www.heliades.fr/', "assets/logo/heliades.jpg");
 
 --
 -- Index pour les tables déchargées
